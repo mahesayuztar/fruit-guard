@@ -1,0 +1,424 @@
+<?php
+/**
+ * Project: FruitGuard+ Display Web
+ * File: main.php
+ * Author: BudakSapir
+ * Created: 04 Oct 2025
+ * Description: Display Web untuk project PKM FruitGuard+.
+ */
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+date_default_timezone_set('Asia/Jakarta');
+
+$title = "FruitGuard+";
+?>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?= htmlspecialchars($title) ?></title>
+    <link rel="icon" href="assets/logo-navbar/logo_cr.png" type="image/png">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav id="mainNavbar" class="navbar-custom navbar navbar-expand-md fixed-top shadow-sm">
+    <div class="container">
+        <a href="/" class="navbar-brand d-flex align-items-center text-decoration-none">
+            <img src="assets/logo-navbar/logo.png" alt="Logo Icon" class="me-2 logo-style">
+            <img src="assets/logo-navbar/logo-tulisan.png" alt="Logo Text" height="28" class="logo-tulisan-style pt-1">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Testimoni</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Produk</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Edukasi</a>
+            </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <div class="position-relative hero-container ">
+        <img src="assets/background-home_cr.png"
+        class="img-fluid position-absolute top-0 start-0 w-100 h-100"
+        style="object-fit: cover; z-index: 1;"> 
+    
+        <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-start align-items-lg-start align-items-center ps-lg-5 p-4 hero-text"
+            style="z-index: 2; color: white;">
+            <div class="ms-lg-5">
+                <h1 class="display-5 hero-green d-lg-none d-block">LINDUNGI PANEN BUAH ANDA DENGAN</h1>
+                <h1 class="display-5 hero-green d-lg-block d-none">LINDUNGI PANEN BUAH <br> ANDA DENGAN</h1>
+                <h1 class="display-5 hero-red fst-italic">FRUITGUARD+</h1>
+            </div> 
+
+            <div class="ms-5 me-5 hero-description flex-row align-items-center justify-content-between mt-5 d-none d-lg-flex">
+                <p class="mb-0 text-center text-lg-start">
+                Inovasi Heigrow Fruit Cover Berbahan Dasar Polypropylene dan Chitosan 
+                untuk Pembungkus Buah Optimal serta Bisnis Berkelanjutan
+                </p>
+                <img src="assets/mockup produk manual.png" alt="Produk FruitGuard"
+                class="img-fluid hero-product">
+            </div>
+
+            <button type="button" class="d-lg-flex d-none btn btn-hero align-items-center justify-content-between px-3 py-2 gap-3 ms-5 mt-5">
+                    <i class="bi bi-cart-plus"></i>
+                    <span class="fw-semibold">Lihat Produk</span>
+                    <i class="bi bi-arrow-right"></i>
+            </button>
+
+            <div class="hero-description d-lg-none d-flex flex-column align-items-center justify-content-start mt-3">
+                <img src="assets/mockup produk manual.png" alt="Produk FruitGuard"
+                class="img-fluid hero-product">
+                <p class="mb-0 text-center text-lg-start mb-2" style="margin-top: 15%">
+                Inovasi Heigrow Fruit Cover Berbahan Dasar Polypropylene dan Chitosan 
+                untuk Pembungkus Buah Optimal serta Bisnis Berkelanjutan
+                </p>
+                <button type="button" class="d-flex btn btn-hero align-items-center justify-content-between px-2 py-1 gap-3 mt-3">
+                    <i class="bi bi-cart-plus"></i>
+                    <span class="fw-semibold">Lihat Produk</span>
+                    <i class="bi bi-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>  
+    <div class="position-relative about-container z-3" style="height: 88vh;">
+        <div class="position-absolute w-100 h-100 d-flex flex-column align-items-center justify-content-start " style="top: 0; left: 0;">
+            <h2>Tentang FruitGuard+</h2>
+            <svg class="about-line" height="6" xmlns="http://www.w3.org/2000/svg" style="overflow: visible;" class="mt-3 mb-2">
+                <line x1="0" y1="0" x2="100%" y2="0" stroke="var(--green-3)" stroke-width="2" stroke-linecap="round" />
+            </svg>
+            <!-- FruitGuard+ Part Of -->
+            <div class="d-flex flex-lg-row align-items-lg-start justify-content-lg-between flex-column align-items-center justify-content-start about-part-of fade-in-element">
+                <div class="text-about-part-of">
+                    <h3>FruitGuard+ Part Of :</h3>
+                    <p class="text-bold text-about">FruitGuard+ merupakan produk hasil Program Kreativitas Mahasiswa bidang Kewirausahaan. Bergerak di bawah naungan Kemdiktisaintek, Simbelmawa, & Universitas Negeri Malang</p>
+                </div>
+                <div class="d-lg-flex d-none flex-column align-items-center p-0 logo-about-part-of gap-2">
+                    <div class="d-flex flex-row align-items-center gap-5 logo-row-about-part-of">
+                        <img src="assets/tutwuri.png" alt="tutwuri logo">
+                        <img src="assets/Logo Diktisaintek Berdampak_Horizontal Logo.png" alt="dikti berdampak logo">
+                        <img src="assets/Logo Belmawa Bersinergi - Warna.png" alt="belmawa bersinergi logo">
+                    </div>
+                    <div class="d-flex flex-row align-items-center gap-5 logo-row-about-part-of">
+                        <img src="assets/Logo Simbelmawa.png" alt="simbelmawa logo">
+                        <img src="assets/logo pkm.png" alt="pkm logo">
+                        <img src="assets/logo um.png" alt="um logo">
+                        <img src="assets/FINAL LOGO TANPA SHADOW 2.png" alt="fruitguard+ logo">
+                    </div>
+                </div>
+                <div class="d-lg-none d-flex flex-column align-items-start p-0 logo-part-of">
+                    <div class="d-flex flex-row align-items-center gap-4 logo-row-part-of">
+                        <img src="assets/tutwuri.png" alt="tutwuri logo">
+                        <img src="assets/Logo Diktisaintek Berdampak_Horizontal Logo.png" alt="dikti berdampak logo">
+                        <img src="assets/Logo Belmawa Bersinergi - Warna.png" alt="belmawa bersinergi logo">
+                        <img src="assets/Logo Simbelmawa.png" alt="simbelmawa logo">
+                        <img src="assets/logo pkm.png" alt="pkm logo">
+                        <img src="assets/logo um.png" alt="um logo">
+                        <img src="assets/FINAL LOGO TANPA SHADOW 2.png" alt="fruitguard+ logo">
+                        <img src="assets/tutwuri.png" alt="tutwuri logo">
+                        <img src="assets/Logo Diktisaintek Berdampak_Horizontal Logo.png" alt="dikti berdampak logo">
+                        <img src="assets/Logo Belmawa Bersinergi - Warna.png" alt="belmawa bersinergi logo">
+                        <img src="assets/Logo Simbelmawa.png" alt="simbelmawa logo">
+                        <img src="assets/logo pkm.png" alt="pkm logo">
+                        <img src="assets/logo um.png" alt="um logo">
+                        <img src="assets/FINAL LOGO TANPA SHADOW 2.png" alt="fruitguard+ logo">
+                    </div>
+                </div>
+            </div>
+            <!-- Kualitas Panen Terancam -->
+            <div class="d-flex flex-lg-row align-items-lg-start justify-content-lg-between flex-column align-items-center justify-content-start about-rotten fade-in-element">
+                <div class="image-rotten">
+                    <div class="rotten-container" id="rottenContainer">
+                        <img src="assets/rotten-fruits/1.png" alt="gambar 1">
+                        <img src="assets/rotten-fruits/2.png" alt="gambar 2">
+                        <img src="assets/rotten-fruits/3.png" alt="gambar 3">
+                    </div>
+
+                    <button class="scroll-btn right" onclick="nextImage()">
+                        <strong>Geser</strong>
+                        <i class="bi bi-arrow-right ms-2"></i>
+                    </button>
+                </div>
+                <div class="text-rotten-container text-end w-50 ps-5">
+                    <h3>Kualitas Panen Terancam :</h3>
+                    <ul class="list-unstyled text-about text-bold">
+                        <li class="d-flex justify-content-end align-items-center text-rotten-item gap-3">
+                        <span>Sering khawatir buah-buahan <br>di kebun Anda?</span>
+                        <img src="assets\rotten-icons\Group 1.png" class="text-rotten-icon mt-2">
+                        </li>
+                        <li class="d-flex justify-content-end align-items-center text-rotten-item gap-3">
+                        <span>Serangan hama, jamur, atau cuaca ekstrem seringkali merusak hasil panen dan menurunkan harga jual</span>
+                        <img src="assets\rotten-icons\Group 3.png" class="text-rotten-icon mt-2">
+                        </li>
+                        <li class="d-flex justify-content-end align-items-center text-rotten-item gap-3">
+                        <span>Menggunakan pestisida berlebihan tidak hanya merugikan lingkungan, tetapi juga bisa mengurangi nilai jual buah organik Anda</span>
+                        <img src="assets\rotten-icons\Group 2.png" class="text-rotten-icon mt-2">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Perkenalkan FruitGuard+ -->
+            <div class="d-flex flex-lg-column align-items-lg-center justify-content-lg-start flex-column align-items-center justify-content-start about-intro z-1 fade-in-element">
+                <div class="text-intro">
+                    <h3>Perkenalkan FruitGuard+ :</h3>
+                    
+                    <p class="text-bold text-about">Inovasi pembungkus buah pra-panen terbuat dari perpaduan Polypropylene dengan bahan ramah lingkungan seperti limbah kulit udang dan pati singkong. FruitGuard+ memberikan perlindungan maksimal sehingga Anda bisa memanen buah yang lebih sehat, berkualitas, dan bernilai jual tinggi.</p>
+                </div>
+                <div class="ratio ratio-16x9 mt-3 intro-video w-75">
+                    <iframe 
+                        src="https://www.youtube.com/embed/KWJ66bAm2OA" 
+                        title="FruitGuard+ Video"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="position-relative advantage-container">
+        <div class="shape-mask position-absolute top-0 start-0 w-100 h-100"></div>
+        <div class="shape-mask-2 position-absolute top-0 start-0 w-100 h-100"></div>
+        <div class="shape-fill position-absolute"></div>
+
+        <div class="advantage-content position-relative text-left fade-in-element">
+            <h2 class="ms-3">Keunggulan FruitGuard+</h2>
+            <svg class="advantage-line mt-2 mb-4 ms-3" height="6" xmlns="http://www.w3.org/2000/svg" style="overflow: visible;">
+            <line x1="0" y1="0" x2="100%" y2="0" stroke="var(--white-2)" stroke-width="2" stroke-linecap="round" />
+            </svg>
+            <div class="d-flex flex-row align-items-start justify-content-between">
+                <div class="d-flex align-items-start justify-content-start content-advantage-tiles">
+                    <div class="content-advantage-grid">
+                        <div class="content-advantage-box">
+                        <i class="bi bi-recycle content-advantage-icon"></i>
+                        <p class="content-advantage-text">Perpaduan dari Bahan Ramah Lingkungan</p>
+                        </div>
+                        <div class="content-advantage-box">
+                        <i class="bi bi-hourglass-split content-advantage-icon"></i>
+                        <p class="content-advantage-text">Dapat terurai lebih<br>cepat</p>
+                        </div>
+                        <div class="content-advantage-box">
+                        <i class="bi bi-shield-check content-advantage-icon"></i>
+                        <p class="content-advantage-text">Melindungi<br>dari Hama </p>
+                        </div>
+                        <div class="content-advantage-box">
+                        <i class="bi bi-virus content-advantage-icon"></i>
+                        <p class="content-advantage-text">Antimikroba</p>
+                        </div>
+                        <div class="content-advantage-box">
+                        <i class="bi bi-cloud-sun content-advantage-icon"></i>
+                        <p class="content-advantage-text">Tahan Cuaca Ekstrem</p>
+                        </div>
+                        <div class="content-advantage-box">
+                        <i class="bi bi-shield-lock content-advantage-icon"></i>
+                        <p class="content-advantage-text">Tidak mudah sobek</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container image-advantage">
+                    <img src="assets/keunggulan_final_nobg_cr.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="testimoni-content position-relative text-center fade-in-element">
+            <h2 class="ms-3">Kisah Sukses Petani</h2>
+            <svg class="testimoni-line mt-2 mb-4 ms-3" height="6" xmlns="http://www.w3.org/2000/svg" style="overflow: visible;">
+            <line x1="0" y1="0" x2="100%" y2="0" stroke="var(--white-2)" stroke-width="2" stroke-linecap="round" />
+            </svg>
+            <div id="review1" class="position-relative testimoni-card d-flex flex-row">
+                <img src="assets/kisah-petani 1.jpg" alt="" class="">
+                <div class="d-flex flex-column align-items-start testimoni-text text-black">
+                    <p class="review">"Saya bangga bisa pakai produk yang ramah lingkungan. FruitGuard+ membantu saya menjaga kualitas panen tanpa harus khawatir soal limbah plastik."</p>
+                    <div class="identity d-flex flex-row justify-content-between">
+                        <div class="">
+                            <p>&#11834; Ibu Siti <br> <span>Petani Buah Mangga, Pasuruan</span>
+                            </p>
+                            <div class="d-flex flex-row gap-1">
+                            <i class="bi bi-star-fill good"></i>
+                            <i class="bi bi-star-fill good"></i>
+                            <i class="bi bi-star-fill good"></i>
+                            <i class="bi bi-star-fill good"></i>
+                            <i class="bi bi-star-fill bad"></i>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row gap-5 mt-4 navigation-review">
+                            <button type="button" class="left" onclick="swipeReview('review3')">
+                                <i class="bi bi-chevron-left"></i>
+                            </button>
+                            <button type="button" class="right" onclick="swipeReview('review2')">
+                                <i class="bi bi-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="review2" class="position-relative testimoni-card d-none flex-row">
+                <img src="assets/kisah-petani 2.jpg" alt="" class="">
+                <div class="d-flex flex-column align-items-start testimoni-text text-black">
+                    <p class="review">"Sejak pakai FruitGuard+, hasil panen jambu lebih mulus, tidak ada lagi bercak hitam, dan lebih sehat berkualitas"</p>
+                    <div class="identity d-flex flex-row justify-content-between">
+                        <div class="">
+                            <p>&#11834; Pak Budi <br> <span>Petani Jambu Organik, Malang</span>
+                            </p>
+                            <div class="d-flex flex-row gap-1">
+                            <i class="bi bi-star-fill good"></i>
+                            <i class="bi bi-star-fill good"></i>
+                            <i class="bi bi-star-fill good"></i>
+                            <i class="bi bi-star-fill good"></i>
+                            <i class="bi bi-star-fill good"></i>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row gap-5 mt-4 navigation-review">
+                            <button type="button" class="left" onclick="swipeReview('review1')">
+                                <i class="bi bi-chevron-left"></i>
+                            </button>
+                            <button type="button" class="right" onclick="swipeReview('review3')">
+                                <i class="bi bi-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="review3" class="position-relative testimoni-card d-none flex-row">
+                <img src="assets/kisah-petani 3.jpg" alt="" class="">
+                <div class="d-flex flex-column align-items-start testimoni-text text-black">
+                    <p class="review">“Bahannya kuat dan simple cocok untuk bungkus buah biar aman. Next CO lagi”</p>
+                    <div class="identity d-flex flex-row justify-content-between">
+                        <div class="">
+                            <p>&#11834; Sutono <br> <span>Customer Blitar</span>
+                            </p>
+                            <div class="d-flex flex-row gap-1">
+                            <i class="bi bi-star-fill good"></i>
+                            <i class="bi bi-star-fill good"></i>
+                            <i class="bi bi-star-fill good"></i>
+                            <i class="bi bi-star-fill good"></i>
+                            <i class="bi bi-star-fill good"></i>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row gap-5 mt-4 navigation-review">
+                            <button type="button" class="left" onclick="swipeReview('review2')">
+                                <i class="bi bi-chevron-left"></i>
+                            </button>
+                            <button type="button" class="right" onclick="swipeReview('review1')">
+                                <i class="bi bi-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-content text-left fade-in-element">
+            <div class="d-flex flex-row align-items-start justify-content-between z-0">
+                <div>
+                <h2 class="ms-3">Produk Kami</h2>
+                    <svg class="product-line mt-2 mb-4 ms-3" height="6" xmlns="http://www.w3.org/2000/svg" style="overflow: visible;">
+                        <line x1="0" y1="0" x2="100%" y2="0" stroke="var(--white-2)" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </div>
+                
+                </div>
+            </div>
+            
+            <div class="product-bg d-flex flex-row align-items-center fade-in-element">
+                <div class="container-product fade-in-element">
+                    <img class="box-product position-absolute" src="assets/mockup produk manual.png" alt="">
+                    <img class="real-product position-absolute" src="assets/product/product-nobg_cr.png" alt="">
+                    <p class="text-container-product">Tersedia dalam :</p>
+                    <div class="d-flex flex-row gap-3 text-sedang">
+                        <i class="bi bi-arrows-angle-contract" style="font-size:2vw;"></i>
+                        <p class="">Sedang <br> 20 x 25 cm</p>
+                    </div>
+                    <svg class="text-line" xmlns="http://www.w3.org/2000/svg" style="overflow: visible;">
+                        <line x1="0" y1="0" x2="0" y2="100%" stroke="var(--bg-color)" stroke-width="4" stroke-linecap="round" />
+                    </svg>
+                    <div class="d-flex flex-row gap-3 text-besar">
+                        <i class="bi bi-arrows-fullscreen" style="font-size:2vw;"></i>
+                        <p class="">Besar <br> 30 x 40 cm</p>
+                    </div>
+                </div>
+                <div class="container-product-desc d-flex flex-column align-items-start justify-content-start ms-5 fade-in-element">
+                    <div class="isi-paket d-flex flex-row gap-4">
+                        <i class="bi bi-box-seam" style="font-size: 2.3vw; margin-top: -0.7vh"></i>
+                        <p>Setiap pembelian berisi <span>50pcs/pack</span></p>
+                    </div>
+                    <div class="compare-paket d-flex flex-row gap-5">
+                        <div class="compare-paket-sedang d-flex flex-column gap-1 me-4">
+                            <div class="d-flex flex-row gap-3 text-compare-sedang">
+                                <div class="mango-mask"></div>
+                                <p class="fw-bold mb-2">Ukuran Sedang <br> untuk buah :</p>
+                            </div>
+                            <ul class="ps-4 list-sedang">
+                                <li>Buah Naga</li>
+                                <li>Jambu Biji</li>
+                                <li>Mangga</li>
+                                <li>Apel</li>
+                                <li>Belimbing</li>
+                                <li>Jambu Air</li>
+                                <li>Alpukat</li>
+                            </ul>
+                            <div class="d-flex flex-row gap-3 text-harga">
+                                <i class="bi bi-tags"></i>
+                                <p class="fw-bold mb-2">Harga Cuma :<br><span>Rp. 50.000</span></p>
+                            </div>
+                        </div>
+                        <svg class="compare-line" xmlns="http://www.w3.org/2000/svg" style="overflow: visible;">
+                            <line x1="0" y1="0" x2="0" y2="100%" stroke="var(--bg-color)" stroke-width="3" stroke-linecap="round" />
+                        </svg>
+                        <div class="compare-paket-sedang d-flex flex-column gap-1 ms-4">
+                            <div class="d-flex flex-row gap-3 text-compare-sedang">
+                                <div class="grape-mask"></div>
+                                <p class="fw-bold mb-2">Ukuran Besar <br> untuk buah :</p>
+                            </div>
+                            <ul class="ps-4 list-sedang">
+                                <li>Kelengkeng</li>
+                                <li>Anggur</li>
+                            </ul>
+                            <div class="d-flex flex-row gap-3 text-harga">
+                                <i class="bi bi-tags"></i>
+                                <p class="fw-bold mb-2">Harga Cuma :<br><span>Rp. 80.000</span></p>
+                            </div>
+                            <div class="tombol-shopee d-flex flex-column gap-3">
+                                <a href="https://shopee.co.id/fruitguard_malang?entryPoint=ShopBySearch&searchKeyword=fruitguard%2B" target="_blank" class="btn btn-outline-primary d-flex align-items-center gap-2">
+                                    <img src="assets/product/shopee-icon.png" class="logo-shopee" alt="">
+                                Beli di Shopee
+                                </a>
+                                <a href="https://tk.tokopedia.com/ZSDY6tqQM/" target="_blank" class="btn btn-outline-primary d-flex align-items-center gap-2">
+                                    <img src="assets/product/tokopedia-icon.png" class="logo-shopee" alt="">
+                                Beli di Tokopedia
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
