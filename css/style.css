@@ -598,7 +598,7 @@ h3 {
     position: relative;
     z-index: 0; /* di atas shape-mask dan shape-fill */
     color: var(--bg-color); /* atau warna kontras */
-    padding-top: 45vh; /* atur posisi vertikal teks */
+    padding-top: 51vh; /* atur posisi vertikal teks */
     margin: 0 9vw 0 9vw;
   }
   
