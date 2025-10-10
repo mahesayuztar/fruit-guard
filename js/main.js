@@ -10,11 +10,11 @@ window.addEventListener("scroll", function() {
 let currentIndex = 0;
 let isAnimating = false;
 
-function nextImage() {
+function nextImage(cont) {
   if (isAnimating) return; // cegah klik beruntun
   isAnimating = true;
 
-  const container = document.getElementById('rottenContainer');
+  const container = document.getElementById(cont);
   const images = container.querySelectorAll('img');
   const total = images.length;
   const start = container.scrollLeft;

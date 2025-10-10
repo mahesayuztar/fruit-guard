@@ -135,19 +135,50 @@
             </div>
             <!-- Kualitas Panen Terancam -->
             <div class="d-flex flex-lg-row align-items-lg-start justify-content-lg-between flex-column align-items-center justify-content-start about-rotten fade-in-element">
-                <div class="image-rotten">
-                    <div class="rotten-container" id="rottenContainer">
+                <div class="d-lg-none d-block text-center">
+                    <h3>Kualitas Panen Terancam :</h3>
+                    <div class="image-rotten">
+                        <div class="rotten-container" id="rottenContainer">
+                            <img src="assets/rotten-fruits/1.png" alt="gambar 1">
+                            <img src="assets/rotten-fruits/2.png" alt="gambar 2">
+                            <img src="assets/rotten-fruits/3.png" alt="gambar 3">
+                        </div>
+    
+                        <button class="scroll-btn right" onclick="nextImage('rottenContainer')">
+                            <strong>Geser</strong>
+                            <i class="bi bi-arrow-right ms-2"></i>
+                        </button>
+                    </div>
+                    <ul class="list-unstyled text-about text-bold text-rotten">
+                        <li class="d-flex flex-row justify-content-lg-end justify-content-center align-items-center text-start gap-3 mb-2">
+                            <img src="assets\rotten-icons\Group 1.png" class="text-rotten-icon">
+                            <span>Sering khawatir buah-buahan di kebun Anda?</span>
+                        </li>
+                        <li class="d-flex flex-row justify-content-center align-items-center text-start gap-3 mb-2">
+                            <img src="assets\rotten-icons\Group 3.png" class="text-rotten-icon">
+                            <span>Hama, jamur, cuaca ekstrem turunkan panen</span>
+                        </li>
+                        <li class="d-flex flex-row justify-content-center align-items-center gap-3 text-start">
+                            <img src="assets\rotten-icons\Group 2.png" class="text-rotten-icon">
+                            <span>Pestisida berlebih merusak alam & harga</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="image-rotten d-none d-lg-block">
+                    <div class="rotten-container" id="rottenContainerlg">
                         <img src="assets/rotten-fruits/1.png" alt="gambar 1">
                         <img src="assets/rotten-fruits/2.png" alt="gambar 2">
                         <img src="assets/rotten-fruits/3.png" alt="gambar 3">
                     </div>
 
-                    <button class="scroll-btn right" onclick="nextImage()">
+                    <button class="scroll-btn right" onclick="nextImage('rottenContainerlg')">
                         <strong>Geser</strong>
                         <i class="bi bi-arrow-right ms-2"></i>
                     </button>
                 </div>
-                <div class="text-rotten-container text-end w-50 ps-5">
+                
+                <div class="d-lg-block d-none text-end w-50 ps-5">
                     <h3>Kualitas Panen Terancam :</h3>
                     <ul class="list-unstyled text-about text-bold">
                         <li class="d-flex justify-content-end align-items-center text-rotten-item gap-3">
@@ -170,9 +201,11 @@
                 <div class="text-intro">
                     <h3>Perkenalkan FruitGuard+ :</h3>
                     
-                    <p class="text-bold text-about">Inovasi pembungkus buah pra-panen terbuat dari perpaduan Polypropylene dengan bahan ramah lingkungan seperti limbah kulit udang dan pati singkong. FruitGuard+ memberikan perlindungan maksimal sehingga Anda bisa memanen buah yang lebih sehat, berkualitas, dan bernilai jual tinggi.</p>
+                    <p class="d-none d-lg-block text-bold text-about">Inovasi pembungkus buah pra-panen terbuat dari perpaduan Polypropylene dengan bahan ramah lingkungan seperti limbah kulit udang dan pati singkong. FruitGuard+ memberikan perlindungan maksimal sehingga Anda bisa memanen buah yang lebih sehat, berkualitas, dan bernilai jual tinggi.</p>
+
+                    <p class="d-block d-lg-none text-bold text-about">FruitGuard+ membungkus buah dengan campuran Polypropylene, limbah kulit udang, dan pati singkong untuk hasil panen yang sehat dan berkualitas.</p>
                 </div>
-                <div class="ratio ratio-16x9 mt-3 intro-video w-75">
+                <div class="ratio ratio-16x9 mt-lg-3 w-75 intro-video">
                     <iframe 
                         src="https://www.youtube.com/embed/KWJ66bAm2OA" 
                         title="FruitGuard+ Video"
@@ -183,16 +216,16 @@
         </div>
     </div>
     <div class="position-relative advantage-container">
-        <div class="shape-mask position-absolute top-0 start-0 w-100 h-100"></div>
-        <div class="shape-mask-2 position-absolute top-0 start-0 w-100 h-100"></div>
+        <div class="shape-mask position-absolute w-100 h-100"></div>
+        <div class="shape-mask-2 position-absolute w-100 h-100"></div>
         <div class="shape-fill position-absolute"></div>
 
-        <div class="advantage-content position-relative text-left fade-in-element">
-            <h2 class="ms-3">Keunggulan FruitGuard+</h2>
-            <svg class="advantage-line mt-2 mb-4 ms-3" height="6" xmlns="http://www.w3.org/2000/svg" style="overflow: visible;">
+        <div class="advantage-content position-relative fade-in-element d-lg-block d-flex flex-column align-items-center text-center text-lg-start">
+            <h2 class="ms-lg-3">Keunggulan FruitGuard+</h2>
+            <svg class="advantage-line mt-2 mb-3 ms-lg-3" height="6" xmlns="http://www.w3.org/2000/svg" style="overflow: visible;">
             <line x1="0" y1="0" x2="100%" y2="0" stroke="var(--white-2)" stroke-width="2" stroke-linecap="round" />
             </svg>
-            <div class="d-flex flex-row align-items-start justify-content-between">
+            <div class="d-lg-flex d-none flex-row align-items-start justify-content-between">
                 <div class="d-flex align-items-start justify-content-start content-advantage-tiles">
                     <div class="content-advantage-grid">
                         <div class="content-advantage-box">
@@ -223,6 +256,32 @@
                 </div>
                 <div class="container image-advantage">
                     <img src="assets/keunggulan_final_nobg_cr.png" alt="">
+                </div>
+            </div>
+            <div class="d-lg-none d-flex flex-column align-items-center justify-content-center content-advantage-tiles gap-4">
+                <div class="content-advantage-box d-flex flex-column align-items-center justify-content-center">
+                    <i class="bi bi-recycle content-advantage-icon"></i>
+                    <p class="content-advantage-text">Perpaduan dari Bahan Ramah Lingkungan</p>
+                </div>
+                <div class="content-advantage-box d-flex flex-column align-items-center justify-content-center">
+                    <i class="bi bi-hourglass-split content-advantage-icon"></i>
+                    <p class="content-advantage-text">Dapat terurai lebih<br>cepat</p>
+                </div>
+                <div class="content-advantage-box d-flex flex-column align-items-center justify-content-center">
+                    <i class="bi bi-shield-check content-advantage-icon"></i>
+                    <p class="content-advantage-text">Melindungi<br>dari Hama </p>
+                </div>
+                <div class="content-advantage-box d-flex flex-column align-items-center justify-content-center">
+                    <i class="bi bi-virus content-advantage-icon"></i>
+                    <p class="content-advantage-text">Antimikroba</p>
+                </div>
+                <div class="content-advantage-box d-flex flex-column align-items-center justify-content-center">
+                    <i class="bi bi-cloud-sun content-advantage-icon"></i>
+                    <p class="content-advantage-text">Tahan Cuaca Ekstrem</p>
+                </div>
+                <div class="content-advantage-box d-flex flex-column align-items-center justify-content-center">
+                    <i class="bi bi-shield-lock content-advantage-icon"></i>
+                    <p class="content-advantage-text">Tidak mudah sobek</p>
                 </div>
             </div>
         </div>
