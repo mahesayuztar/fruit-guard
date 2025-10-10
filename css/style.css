@@ -489,7 +489,7 @@ h3 {
   .image-rotten {
     position: relative;
     width: 75vw;
-    height: 15vh;
+    height: 20vh;
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
@@ -506,7 +506,7 @@ h3 {
   
   .rotten-container img {
     width: 75vw;
-    height: 15vh;
+    height: 20vh;
     object-fit: cover;
     object-position: center;
     flex-shrink: 0;
@@ -515,7 +515,7 @@ h3 {
   .scroll-btn {
     font-size: 3vw;
     position: absolute;
-    top: 11vh;
+    top: 16vh;
     right: 1.5vw;
     background-color: var(--yellow-1);
     color: var(--green-1);
@@ -550,7 +550,7 @@ h3 {
   /* Mask daun di bagian atas */
   .shape-mask {
     position: absolute;
-    top: 10vh;
+    top: 16vh;
     width: 100%;
     height: 55vh; /* tinggi daun tetap */
     background-color: var(--green-leaf);
@@ -567,7 +567,7 @@ h3 {
 
   .shape-mask-2{
     position: absolute;
-    top: 10vh;
+    top: 16vh;
     width: 100%;
     height: 55vh; /* tinggi daun tetap */
     background-color: var(--green-leaf);
@@ -586,7 +586,7 @@ h3 {
   /* Warna hijau yang melanjutkan area di bawah daun */
   .shape-fill {
     position: absolute;
-    top: 37vh; /* mulai setelah daun */
+    top: 42vh; /* mulai setelah daun */
     width: 100%;
     height: 100%; /* sisa layar */
     background-color: var(--green-leaf);
