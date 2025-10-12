@@ -822,8 +822,8 @@ h3 {
     background-color: var(--green-1);
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    padding: 3vh 2.5vw 3vh 2.5vw;
-    height: 84vh;
+    padding: 3vh 2.5vw 5vh 2.5vw;
+    height: max-content;
     width: auto;
     overflow: hidden;
   }
@@ -998,14 +998,14 @@ h3 {
   .list-sedang {
     color: var(--bg-color); font-size: 3.3vw;
     font-weight: normal;
-    margin-top: 3.5vh;
+    margin-top: 30%;
     margin-left: -1.4vw;
   }
 
   .list-besar {
     color: var(--bg-color); font-size: 3.3vw;
     font-weight: normal;
-    margin-top: 2.8vh;
+    margin-top: 25%;
     margin-left: -1.4vw;
   }
 
