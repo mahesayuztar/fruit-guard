@@ -49,39 +49,54 @@ let currentReview = 1; // review yang tampil pertama
 const totalReviews = 3; // jumlah total review
 
 function swipeReview(targetId) {
-  if(targetId=='left') {
-    targetId = 'review'+((currentReview-1)%totalReviews || totalReviews);
+  const duration = 600; // durasi animasi (ms)
+
+  // Hitung target ID kiri/kanan
+  if (targetId === 'left') {
+    targetId = 'review' + ((currentReview - 2 + totalReviews) % totalReviews + 1);
+  } else if (targetId === 'right') {
+    targetId = 'review' + ((currentReview % totalReviews) + 1);
   }
-  else if(targetId=='right'){
-    targetId = 'review'+((currentReview+1)%totalReviews || totalReviews);
-  }
+
   const current = document.getElementById(`review${currentReview}`);
   const target = document.getElementById(targetId);
   if (!current || !target || current === target) return;
 
-  // Fade out yang sekarang
-  current.classList.add('fading-out');
-  current.classList.remove('active');
+  // Fade out elemen aktif
+  current.style.transition = 'opacity 0.6s ease';
+  current.style.opacity = 0;
 
-  // Setelah fade out selesai (0.6s), baru ganti elemen
+  // Setelah fade-out selesai
   setTimeout(() => {
+    // Sembunyikan elemen lama
     current.classList.add('d-none');
-    current.classList.remove('d-flex', 'fading-out');
+    current.classList.remove('d-flex');
+    current.style.transition = 'none';
+    current.style.opacity = 1; // reset agar bisa dipakai lagi nanti
 
-    // Tampilkan elemen target
+    // Siapkan elemen target
+    target.style.transition = 'none';
+    target.style.opacity = 0;
     target.classList.remove('d-none');
     target.classList.add('d-flex');
-    
-    // Reflow supaya browser tangkap transisi baru
+
+    // Reflow agar browser tahu opacity awal 0
     void target.offsetWidth;
 
-    // Fade in elemen baru
-    target.classList.add('active');
+    // Jalankan fade-in
+    target.style.transition = 'opacity 0.6s ease';
+    target.style.opacity = 1;
 
-    // Update current
+    // Hapus transition setelah selesai agar animasi konsisten di swipe berikutnya
+    setTimeout(() => {
+      target.style.transition = 'none';
+    }, duration);
+
+    // Update indeks review aktif
     currentReview = parseInt(targetId.replace('review', ''));
-  }, 600); // waktu disamakan dengan transition: 0.6s
+  }, duration);
 }
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const elements = document.querySelectorAll('.fade-in-element');

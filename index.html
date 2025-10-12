@@ -430,19 +430,17 @@
         </div>
 
         <div class="product-content text-left fade-in-element">
-            <div class="d-flex flex-row align-items-start justify-content-between z-0">
+            <div class="d-flex flex-lg-row flex-column align-items-lg-start justify-content-lg-between align-items-center justify-content-center z-0 text-lg-start text-center">
                 <div>
-                <h2 class="ms-3">Produk Kami</h2>
-                    <svg class="product-line mt-2 mb-4 ms-3" height="6" xmlns="http://www.w3.org/2000/svg" style="overflow: visible;">
+                <h2 class="ms-lg-3">Produk Kami</h2>
+                    <svg class="product-line mt-2 mb-lg-4 mb-3 ms-lg-3" height="6" xmlns="http://www.w3.org/2000/svg" style="overflow: visible;">
                         <line x1="0" y1="0" x2="100%" y2="0" stroke="var(--white-2)" stroke-width="2" stroke-linecap="round" />
                     </svg>
                 </div>
-                
-                </div>
             </div>
             
-            <div class="product-bg d-flex flex-row align-items-center fade-in-element">
-                <div class="container-product fade-in-element">
+            <div class="product-bg d-flex flex-lg-row flex-column align-items-center fade-in-element">
+                <div class="container-product fade-in-element d-lg-block d-none">
                     <img class="box-product position-absolute" src="assets/mockup produk manual.png" alt="">
                     <img class="real-product position-absolute" src="assets/product/product-nobg_cr.png" alt="">
                     <p class="text-container-product">Tersedia dalam :</p>
@@ -458,18 +456,34 @@
                         <p class="">Besar <br> 30 x 40 cm</p>
                     </div>
                 </div>
-                <div class="container-product-desc d-flex flex-column align-items-start justify-content-start ms-5 fade-in-element">
-                    <div class="isi-paket d-flex flex-row gap-4">
-                        <i class="bi bi-box-seam" style="font-size: 2.3vw; margin-top: -0.7vh"></i>
+                <div class="container-product fade-in-element d-lg-none d-block">
+                    <img class="box-product position-absolute" src="assets/mockup produk manual.png" alt="">
+                    <img class="real-product position-absolute" src="assets/product/product-nobg_cr.png" alt="">
+                    <p class="text-container-product">Tersedia dalam :</p>
+                    <div class="d-flex flex-row gap-2 text-sedang">
+                        <i class="bi bi-arrows-angle-contract" style="font-size:6vw;"></i>
+                        <p class="">Sedang <br> 20 x 25 cm</p>
+                    </div>
+                    <svg class="text-line" xmlns="http://www.w3.org/2000/svg" style="overflow: visible;">
+                        <line x1="0" y1="0" x2="0" y2="100%" stroke="var(--bg-color)" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                    <div class="d-flex flex-row gap-2 text-besar">
+                        <i class="bi bi-arrows-fullscreen" style="font-size:6vw;"></i>
+                        <p class="">Besar <br> 30 x 40 cm</p>
+                    </div>
+                </div>
+                <div class="container-product-desc d-flex flex-column align-items-start justify-content-start ms-lg-5 fade-in-element">
+                    <div class="isi-paket d-flex flex-row gap-2">
+                        <i class="bi bi-box-seam icon-paket"></i>
                         <p>Setiap pembelian berisi <span>50pcs/pack</span></p>
                     </div>
-                    <div class="compare-paket d-flex flex-row gap-5">
-                        <div class="compare-paket-sedang d-flex flex-column gap-1 me-4">
-                            <div class="d-flex flex-row gap-3 text-compare-sedang">
+                    <div class="compare-paket d-flex flex-row gap-lg-5">
+                        <div class="compare-paket-sedang d-flex flex-column gap-lg-1 me-2 me-lg-4">
+                            <div class="d-flex flex-row gap-lg-3 gap-2 text-compare-sedang">
                                 <div class="mango-mask"></div>
                                 <p class="fw-bold mb-2">Ukuran Sedang <br> untuk buah :</p>
                             </div>
-                            <ul class="ps-4 list-sedang">
+                            <ul class="ps-lg-4 list-sedang">
                                 <li>Buah Naga</li>
                                 <li>Jambu Biji</li>
                                 <li>Mangga</li>
@@ -478,24 +492,27 @@
                                 <li>Jambu Air</li>
                                 <li>Alpukat</li>
                             </ul>
-                            <div class="d-flex flex-row gap-3 text-harga">
+                            <div class="d-flex flex-row gap-2 text-harga">
                                 <i class="bi bi-tags"></i>
                                 <p class="fw-bold mb-2">Harga Cuma :<br><span>Rp. 50.000</span></p>
                             </div>
                         </div>
-                        <svg class="compare-line" xmlns="http://www.w3.org/2000/svg" style="overflow: visible;">
+                        <svg class="compare-line d-lg-block d-none" xmlns="http://www.w3.org/2000/svg" style="overflow: visible;">
                             <line x1="0" y1="0" x2="0" y2="100%" stroke="var(--bg-color)" stroke-width="3" stroke-linecap="round" />
                         </svg>
-                        <div class="compare-paket-sedang d-flex flex-column gap-1 ms-4">
-                            <div class="d-flex flex-row gap-3 text-compare-sedang">
+                        <svg class="compare-line d-lg-none d-block" xmlns="http://www.w3.org/2000/svg" style="overflow: visible;">
+                            <line x1="0" y1="0" x2="0" y2="100%" stroke="var(--bg-color)" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                        <div class="compare-paket-sedang d-flex flex-column gap-1 ms-lg-4 ms-3">
+                            <div class="d-flex flex-row gap-lg-3 gap-2 text-compare-sedang">
                                 <div class="grape-mask"></div>
                                 <p class="fw-bold mb-2">Ukuran Besar <br> untuk buah :</p>
                             </div>
-                            <ul class="ps-4 list-sedang">
+                            <ul class="ps-lg-4 list-sedang">
                                 <li>Kelengkeng</li>
                                 <li>Anggur</li>
                             </ul>
-                            <div class="d-flex flex-row gap-3 text-harga">
+                            <div class="d-flex flex-row gap-lg-3 gap-2 text-harga">
                                 <i class="bi bi-tags"></i>
                                 <p class="fw-bold mb-2">Harga Cuma :<br><span>Rp. 80.000</span></p>
                             </div>
