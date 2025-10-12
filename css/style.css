@@ -656,21 +656,19 @@ h3 {
 
   
   .testimoni-content {
-    margin: 10vh 9vw 0 9vw;
+    margin: 10vh 19vw 0 19vw;
     color: var(--bg-color);
   }
 
   .testimoni-line {
-    width: 34vw;
+    width: 100%;
   }
 
   .testimoni-card {
-    background-color: var(--bg-color);
     border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     padding: 3rem 1rem;
     overflow: hidden;
-    height: 48vh;
+    height: 25vh;
     width: auto;
     transition: opacity 0.6s ease;
   }
@@ -683,62 +681,126 @@ h3 {
     opacity: 0;
     pointer-events: none;
   }
-
-  .testimoni-card img {
+  
+  .testimoni-img-wrapper img {
     position: absolute;
-    inset: 0;
-    left: -1vw;
-    height: 48vh;
+    height: auto;
+    width: 85vw;
     object-fit: cover;
     object-position: center;
   }
 
+  .testimoni-img-wrapper .img1 {
+    left: -22vw;
+    top: -2vh;
+  }
+
+  .testimoni-img-wrapper .img2 {
+    width: 110vw;
+    left: -29vw;
+    top: -8vh;
+  }
+
+  .testimoni-img-wrapper .img3 {
+    width: 110vw;
+    left: -29vw;
+    top: -10.5vh;
+  }
+  
+  /* gradient hanya ke gambar */
+  .testimoni-img-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(58, 110, 9, 0) 30%,
+      rgba(58, 110, 9, 0.9) 65%,
+      rgba(58, 110, 9, 1) 100%
+    );
+    pointer-events: none;
+  }
+
   .testimoni-text {
-    position: relative;
-    width: 100vw;
-    padding: 0vw 5vw 5vw 35vw;
+    position: absolute;
+    top: 14vh;
+    width: 86%;
+    height: 6vh;
+    overflow: visible;
   }
 
   .testimoni-text .review {
-    font-size: 1.3vw;
+    font-size: 2vw;
     text-align: start;
     font-style: normal;
   }
 
   .testimoni-text .identity {
     font-family: TiltWarp;
-    font-size: 1.3vw;
-    text-align: left;
-    line-height: 1.15;
-    position: absolute;
-    bottom: 1vh;
-    width: 40vw;
+    font-size: 1.8vw;
+    text-align: end;
+    margin-top: -2.5vh;
   }
 
   .identity span {
-    color: var(--red-1);
-    font-size: 1vw;
+    color: var(--yellow-1);
+    font-size: 1.8vw;
   }
 
   .testimoni-text .good {
-    margin-top: -1vw;
+    margin-top: -3.5vh;
     color: var(--yellow-1);
-    font-size: 1.9vw;
+    font-size: 2vw;
   }
 
   .testimoni-text .bad {
-    margin-top: -1vw;
+    margin-top: -3.5vh;
     color: lightgray;
-    font-size: 1.9vw;
+    font-size: 2vw;
+  }
+
+  .navigation-review {
+    /* border: 1px solid black; */
+    z-index: 10;
+    position: absolute;
+    top: 52%;
+    left: -12.5vw;
+    width: 87vw;
   }
 
   .navigation-review .left, .navigation-review .right{
     border: 0;
-    font-size: 3vw;
+    background-color: rgba(0, 0, 0, 0);
+    color: var(--bg-color);
+    font-size: 10vw;
   }
 
-  .navigation-review .left:hover, .navigation-review .right:hover {
-    color: var(--green-2);
+  @keyframes nudgeLeft {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(-3vw);
+    }
+  }
+  
+  /* Animasi mencuat ke kanan */
+  @keyframes nudgeRight {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(3vw);
+    }
+  }
+  
+  /* Terapkan animasi berulang */
+  .navigation-review .left {
+    animation: nudgeLeft 3s ease-in-out infinite;
+  }
+  
+  .navigation-review .right {
+    animation: nudgeRight 3s ease-in-out infinite;
   }
 
   .product-content {

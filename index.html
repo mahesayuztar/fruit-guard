@@ -285,15 +285,38 @@
                 </div>
             </div>
         </div>
-
         <div class="testimoni-content position-relative text-center fade-in-element">
-            <h2 class="ms-3">Kisah Sukses Petani</h2>
-            <svg class="testimoni-line mt-2 mb-4 ms-3" height="6" xmlns="http://www.w3.org/2000/svg" style="overflow: visible;">
+            <div class="d-flex d-lg-none flex-row align-items-center justify-content-between navigation-review">
+                <button type="button" class="left" onclick="swipeReview('left')">
+                    <i class="bi bi-chevron-left"></i>
+                </button>
+                <button type="button" class="right" onclick="swipeReview('right')">
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+            </div>
+            <h2 class="">Kisah Sukses Petani</h2>
+            <svg class="testimoni-line mt-2 mb-4" height="6" xmlns="http://www.w3.org/2000/svg" style="overflow: visible;">
             <line x1="0" y1="0" x2="100%" y2="0" stroke="var(--white-2)" stroke-width="2" stroke-linecap="round" />
             </svg>
             <div id="review1" class="position-relative testimoni-card d-flex flex-row">
-                <img src="assets/kisah-petani 1.jpg" alt="" class="">
-                <div class="d-flex flex-column align-items-start testimoni-text text-black">
+                <div class="testimoni-img-wrapper">
+                    <img src="assets/kisah-petani 1.jpg" alt="" class="img1">
+                </div>
+                <div class="testimoni-text d-lg-none d-flex flex-column gap-0 justify-content-between">
+                    <p class="review">"Saya bangga bisa pakai produk yang ramah lingkungan. FruitGuard+ membantu saya menjaga kualitas panen tanpa harus khawatir soal limbah plastik."</p>
+                    <div class="identity">
+                        <p>&#11834; Ibu Siti <br> <span>Petani Buah Mangga, Pasuruan</span>
+                        </p>
+                        <div class="d-flex flex-row gap-1">
+                        <i class="bi bi-star-fill good"></i>
+                        <i class="bi bi-star-fill good"></i>
+                        <i class="bi bi-star-fill good"></i>
+                        <i class="bi bi-star-fill good"></i>
+                        <i class="bi bi-star-fill bad"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-lg-flex d-none flex-column align-items-start testimoni-text text-black">
                     <p class="review">"Saya bangga bisa pakai produk yang ramah lingkungan. FruitGuard+ membantu saya menjaga kualitas panen tanpa harus khawatir soal limbah plastik."</p>
                     <div class="identity d-flex flex-row justify-content-between">
                         <div class="">
@@ -307,7 +330,7 @@
                             <i class="bi bi-star-fill bad"></i>
                             </div>
                         </div>
-                        <div class="d-flex flex-row gap-5 mt-4 navigation-review">
+                        <div class="d-lg-flex d-none flex-row gap-5 mt-4 navigation-review">
                             <button type="button" class="left" onclick="swipeReview('review3')">
                                 <i class="bi bi-chevron-left"></i>
                             </button>
@@ -319,8 +342,24 @@
                 </div>
             </div>
             <div id="review2" class="position-relative testimoni-card d-none flex-row">
-                <img src="assets/kisah-petani 2.jpg" alt="" class="">
-                <div class="d-flex flex-column align-items-start testimoni-text text-black">
+                <div class="testimoni-img-wrapper">
+                    <img src="assets/kisah-petani 2.jpg" alt="" class="img2">
+                </div>
+                <div class="testimoni-text d-lg-none d-flex flex-column gap-0 justify-content-between">
+                    <p class="review">"Sejak pakai FruitGuard+, hasil panen jambu lebih mulus, tidak ada lagi bercak hitam, dan lebih sehat berkualitas" <br><br></p>
+                    <div class="identity">
+                        <p>&#11834; Pak Budi <br> <span>Petani Jambu Organik, Malang</span>
+                        </p>
+                        <div class="d-flex flex-row gap-1">
+                        <i class="bi bi-star-fill good"></i>
+                        <i class="bi bi-star-fill good"></i>
+                        <i class="bi bi-star-fill good"></i>
+                        <i class="bi bi-star-fill good"></i>
+                        <i class="bi bi-star-fill good"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-lg-flex d-none flex-column align-items-start testimoni-text text-black">
                     <p class="review">"Sejak pakai FruitGuard+, hasil panen jambu lebih mulus, tidak ada lagi bercak hitam, dan lebih sehat berkualitas"</p>
                     <div class="identity d-flex flex-row justify-content-between">
                         <div class="">
@@ -334,7 +373,7 @@
                             <i class="bi bi-star-fill good"></i>
                             </div>
                         </div>
-                        <div class="d-flex flex-row gap-5 mt-4 navigation-review">
+                        <div class="d-lg-flex d-none flex-row gap-5 mt-4 navigation-review">
                             <button type="button" class="left" onclick="swipeReview('review1')">
                                 <i class="bi bi-chevron-left"></i>
                             </button>
@@ -346,8 +385,24 @@
                 </div>
             </div>
             <div id="review3" class="position-relative testimoni-card d-none flex-row">
-                <img src="assets/kisah-petani 3.jpg" alt="" class="">
-                <div class="d-flex flex-column align-items-start testimoni-text text-black">
+                <div class="testimoni-img-wrapper">
+                    <img src="assets/kisah-petani 3.jpg" alt="" class="img3">
+                </div>
+                <div class="testimoni-text d-lg-none d-flex flex-column gap-0 justify-content-between">
+                    <p class="review">“Bahannya kuat dan simple cocok untuk <br> bungkus buah biar aman. <br> Next CO lagi” <br><br></p>
+                    <div class="identity">
+                        <p>&#11834; Sutono <br> <span>Customer Blitar</span>
+                        </p>
+                        <div class="d-flex flex-row gap-1">
+                        <i class="bi bi-star-fill good"></i>
+                        <i class="bi bi-star-fill good"></i>
+                        <i class="bi bi-star-fill good"></i>
+                        <i class="bi bi-star-fill good"></i>
+                        <i class="bi bi-star-fill good"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-lg-flex d-none flex-column align-items-start testimoni-text text-black">
                     <p class="review">“Bahannya kuat dan simple cocok untuk bungkus buah biar aman. Next CO lagi”</p>
                     <div class="identity d-flex flex-row justify-content-between">
                         <div class="">
@@ -361,7 +416,7 @@
                             <i class="bi bi-star-fill good"></i>
                             </div>
                         </div>
-                        <div class="d-flex flex-row gap-5 mt-4 navigation-review">
+                        <div class="d-lg-flex d-none flex-row gap-5 mt-4 navigation-review">
                             <button type="button" class="left" onclick="swipeReview('review2')">
                                 <i class="bi bi-chevron-left"></i>
                             </button>

@@ -49,6 +49,12 @@ let currentReview = 1; // review yang tampil pertama
 const totalReviews = 3; // jumlah total review
 
 function swipeReview(targetId) {
+  if(targetId=='left') {
+    targetId = 'review'+((currentReview-1)%totalReviews || totalReviews);
+  }
+  else if(targetId=='right'){
+    targetId = 'review'+((currentReview+1)%totalReviews || totalReviews);
+  }
   const current = document.getElementById(`review${currentReview}`);
   const target = document.getElementById(targetId);
   if (!current || !target || current === target) return;
