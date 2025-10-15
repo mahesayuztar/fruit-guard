@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>News Carousel</title>
+
+  <style>
+    :root{
+      --bg: #e9f0f3;
+      --card-bg: #ffffff;
+      --accent: #0d6efd;
+      --text: #111;
+      --gap: 24px;
+    }
+
+    body{
+      margin:0;
+      font-family: Inter, system-ui, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    /* Wrapper */
+    .news-section{
+      width: 100%;
+      max-width: 1200px;
+      margin: 36px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    .news-header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:12px;
+    }
+
+    .news-title{
+      font-size:20px;
+      font-weight:700;
+      margin:0;
+    }
+
+    /* Buttons container (left/right visible on sides) */
+    .news-controls{
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
+
+    .news-btn{
+      width:40px;
+      height:40px;
+      border-radius:50%;
+      border:none;
+      background:var(--accent);
+      color:#fff;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow: 0 4px 10px rgba(13,102,237,0.18);
+    }
+
+    /* Carousel */
+    .news-carousel{
+      display:flex;
+      gap:var(--gap);
+      overflow-x:auto;
+      padding:18px 8px;
+      box-sizing:border-box;
+      scroll-snap-type:x mandatory;
+      -webkit-overflow-scrolling:touch;
+      cursor:grab;
+      user-select:none;
+      touch-action: pan-y;
+      scrollbar-width:none;
+    }
+
+    .news-carousel::-webkit-scrollbar{ display:none; }
+
+    .news-carousel.news-dragging{
+      cursor:grabbing;
+      scroll-snap-type: none; /* matikan selama drag */
+      scroll-behavior: auto;
+    }
+
+    /* Card */
+    .news-card{
+      flex: 0 0 78%;
+      max-width:420px;
+      min-width:280px;
+      background: var(--card-bg);
+      border-radius:12px;
+      overflow:hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      scroll-snap-align: center;
+      display:flex;
+      gap:0;
+      align-items:stretch;
+      height:220px;
+    }
+
+    /* image + content */
+    .news-card .news-card-media{
+      width:45%;
+      min-width:120px;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .news-card .news-card-body{
+      padding:14px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      gap:8px;
+      width:55%;
+    }
+
+    .news-card .news-category{
+      font-size:11px;
+      font-weight:700;
+      color:#6b6b6b;
+      margin:0;
+    }
+
+    .news-card .news-title{
+      font-size:16px;
+      font-weight:700;
+      margin:0;
+      line-height:1.05;
+    }
+
+    .news-card .news-desc{
+      font-size:13px;
+      color:#4a4a4a;
+      margin:0;
+    }
+
+    .news-card .news-cta{
+      margin-top:8px;
+      width:max-content;
+      padding:6px 12px;
+      border-radius:6px;
+      border:none;
+      background:var(--accent);
+      color:#fff;
+      cursor:pointer;
+    }
+
+    /* responsive: tunjukkan 2 cards di layar besar */
+    @media(min-width:1100px){
+      .news-card{ flex:0 0 48%; max-width:520px; height:240px; }
+      .news-carousel{ padding:24px 12px; }
+    }
+
+    @media(min-width:1400px){
+      .news-card{ flex:0 0 40%; max-width:560px; height:260px; }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="news-section">
+    <div class="news-header">
+      <h2 class="news-title">Update Berita Kami</h2>
+      <div class="news-controls">
+        <button class="news-btn" id="newsPrevBtn" aria-label="Sebelumnya">‹</button>
+        <button class="news-btn" id="newsNextBtn" aria-label="Selanjutnya">›</button>
+      </div>
+    </div>
+
+    <div class="news-carousel" id="newsCarousel" role="list">
+      <article class="news-card" role="listitem">
+        <img class="news-card-media" src="https://picsum.photos/id/1015/600/400" alt="">
+        <div class="news-card-body">
+          <p class="news-category">BEAUTY</p>
+          <h3 class="news-title">Festival hacks and tips every camper needs to know</h3>
+          <p class="news-desc">Bacon ipsum dolor amet meatloaf ribeye ball tip chuck venison pork belly.</p>
+          <button class="news-cta">READ MORE</button>
+        </div>
+      </article>
+
+      <article class="news-card" role="listitem">
+        <img class="news-card-media" src="https://picsum.photos/id/1025/600/400" alt="">
+        <div class="news-card-body">
+          <p class="news-category">VACATION</p>
+          <h3 class="news-title">Gorgeous Vacation Spots to Help You De-Stress</h3>
+          <p class="news-desc">Swine ribeye porchetta turducken strip steak biltong chuck tongue.</p>
+          <button class="news-cta">READ MORE</button>
+        </div>
+      </article>
+
+      <article class="news-card" role="listitem">
+        <img class="news-card-media" src="https://picsum.photos/id/1035/600/400" alt="">
+        <div class="news-card-body">
+          <p class="news-category">LIFESTYLE</p>
+          <h3 class="news-title">Simple tricks to refresh your home look</h3>
+          <p class="news-desc">Frankfurter boudin jerky buffalo tongue shoulder salami rump.</p>
+          <button class="news-cta">READ MORE</button>
+        </div>
+      </article>
+
+      <article class="news-card" role="listitem">
+        <img class="news-card-media" src="https://picsum.photos/id/1045/600/400" alt="">
+        <div class="news-card-body">
+          <p class="news-category">TIPS</p>
+          <h3 class="news-title">Quick design tips for modern layout</h3>
+          <p class="news-desc">Practical steps to tidy layout and improve readability.</p>
+          <button class="news-cta">READ MORE</button>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <script>
+    (function(){
+      const carousel = document.getElementById('newsCarousel');
+      const btnPrev = document.getElementById('newsPrevBtn');
+      const btnNext = document.getElementById('newsNextBtn');
+
+      if (!carousel) return;
+
+      const style = getComputedStyle(carousel);
+      const GAP = parseInt(style.gap || 24);
+
+      // hitung langkah berdasarkan card aktual + gap
+      function getStep(){
+        const card = carousel.querySelector('.news-card');
+        if (!card) return 320;
+        return Math.round(card.getBoundingClientRect().width + GAP);
+      }
+
+      // tombol
+      btnNext.addEventListener('click', () => {
+        carousel.scrollBy({ left: getStep(), behavior: 'smooth' });
+      });
+      btnPrev.addEventListener('click', () => {
+        carousel.scrollBy({ left: -getStep(), behavior: 'smooth' });
+      });
+
+      // pointer events: dukung mouse, touch, pen
+      let dragging = false;
+      let startX = 0;
+      let startScroll = 0;
+      let pointerId = null;
+
+      // recalc saat resize
+      let step = getStep();
+      const ro = (window.ResizeObserver) ? new ResizeObserver(()=> step = getStep()) : null;
+      if (ro) ro.observe(carousel);
+      window.addEventListener('resize', ()=> step = getStep());
+
+      // start
+      function onPointerDown(e){
+        // hanya primary button atau touch
+        if (e.pointerType === 'mouse' && e.button !== 0) return;
+        pointerId = e.pointerId;
+        carousel.setPointerCapture(pointerId);
+        dragging = true;
+        carousel.classList.add('news-dragging');
+        startX = e.clientX;
+        startScroll = carousel.scrollLeft;
+        // matikan smooth agar responsif
+        carousel.style.scrollBehavior = 'auto';
+      }
+
+      function onPointerMove(e){
+        if (!dragging || e.pointerId !== pointerId) return;
+        e.preventDefault();
+        const dx = e.clientX - startX;
+        carousel.scrollLeft = startScroll - dx;
+      }
+
+      function endDrag(){
+        if (!dragging) return;
+        dragging = false;
+        try{ carousel.releasePointerCapture(pointerId); }catch(err){}
+        pointerId = null;
+        carousel.classList.remove('news-dragging');
+        // kembalikan smooth dan snap
+        carousel.style.scrollBehavior = 'smooth';
+        snapNearest();
+      }
+
+      function snapNearest(){
+        // gunakan step yang terbaru
+        step = getStep();
+        const idx = Math.round(carousel.scrollLeft / step);
+        const target = idx * step;
+        carousel.scrollTo({ left: target, behavior: 'smooth' });
+      }
+
+      // attach pointer listeners
+      carousel.addEventListener('pointerdown', onPointerDown, { passive:false });
+      carousel.addEventListener('pointermove', onPointerMove, { passive:false });
+      carousel.addEventListener('pointerup', endDrag);
+      carousel.addEventListener('pointercancel', endDrag);
+      carousel.addEventListener('pointerleave', (e)=> {
+        // kalau pointer keluar dan sedang drag, akhiri
+        if (dragging) endDrag();
+      });
+
+      // fallback touch-only (beberapa browser)
+      let tStartX = 0, tStartScroll = 0;
+      carousel.addEventListener('touchstart', (e)=>{
+        if (e.touches && e.touches.length === 1){
+          tStartX = e.touches[0].clientX;
+          tStartScroll = carousel.scrollLeft;
+        }
+      }, { passive:true });
+
+      carousel.addEventListener('touchmove', (e)=>{
+        if (e.touches && e.touches.length === 1){
+          const dx = e.touches[0].clientX - tStartX;
+          carousel.scrollLeft = tStartScroll - dx;
+        }
+      }, { passive:true });
+
+      carousel.addEventListener('touchend', snapNearest, { passive:true });
+
+      // keyboard: pan with arrows
+      carousel.addEventListener('keydown', (e)=>{
+        if (e.key === 'ArrowRight') { carousel.scrollBy({ left: step, behavior:'smooth' }); }
+        if (e.key === 'ArrowLeft')  { carousel.scrollBy({ left: -step, behavior:'smooth' }); }
+      });
+
+      // accessibility
+      carousel.setAttribute('tabindex','0');
+
+    })();
+  </script>
+
+</body>
+</html>

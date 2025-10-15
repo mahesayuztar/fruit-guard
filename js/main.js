@@ -113,18 +113,48 @@ document.addEventListener("DOMContentLoaded", () => {
   elements.forEach(el => observer.observe(el));
 });
 
-const track = document.querySelector('.carousel-track');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-let index = 0;
-
-nextBtn.addEventListener('click', () => {
-  const items = document.querySelectorAll('.product-item');
-  if (index < items.length - 3) index++;
-  track.style.transform = `translateX(-${index * (100/3)}%)`;
+const btn = document.getElementById("scrollTopBtn");
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 200) btn.style.display = "block";
+  else btn.style.display = "none";
+});
+btn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-prevBtn.addEventListener('click', () => {
-  if (index > 0) index--;
-  track.style.transform = `translateX(-${index * (100/3)}%)`;
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const targetID = this.getAttribute('href');
+    if(targetID!="#grabAndPullCarousel") {
+    const target = document.querySelector(targetID);
+
+    if (target) {
+      const offset = 90; // offset dari atas (navbar)
+      const targetPosition = target.getBoundingClientRect().top + window.scrollY - offset;
+      const startPosition = window.scrollY;
+      const distance = targetPosition - startPosition;
+      const duration = 600; // durasi animasi dalam ms
+      let startTime = null;
+
+      // Fungsi easing (percepatan lembut)
+      function easeInOutQuad(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t + b;
+        t--;
+        return -c / 2 * (t * (t - 2) - 1) + b;
+      }
+
+      function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+      }
+
+      requestAnimationFrame(animation);
+    }
+  }
+  });
 });

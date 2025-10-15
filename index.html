@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
@@ -26,19 +27,19 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="#homeLink">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="#aboutLink">About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Testimoni</a>
+                <a class="nav-link" href="#testimoniLink">Testimoni</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Produk</a>
+                <a class="nav-link" href="#produkLink">Produk</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Edukasi</a>
+                <a class="nav-link" href="#newsLink">Edukasi</a>
             </li>
             </ul>
         </div>
@@ -46,7 +47,7 @@
 </nav>
 
 <main>
-    <div class="position-relative hero-container ">
+    <div id="homeLink" class="position-relative hero-container ">
         <img src="assets/background-home_cr.png"
         class="img-fluid position-absolute top-0 start-0 w-100 h-100"
         style="object-fit: cover; z-index: 1;"> 
@@ -89,7 +90,7 @@
             </div>
         </div>
     </div>  
-    <div class="position-relative about-container z-3" style="height: 88vh;">
+    <div id="aboutLink" class="position-relative about-container z-3" style="height: 88vh;">
         <div class="position-absolute w-100 h-100 d-flex flex-column align-items-center justify-content-start " style="top: 0; left: 0;">
             <h2>Tentang FruitGuard+</h2>
             <svg class="about-line" height="6" xmlns="http://www.w3.org/2000/svg" style="overflow: visible;" class="mt-3 mb-2">
@@ -285,7 +286,7 @@
                 </div>
             </div>
         </div>
-        <div class="testimoni-content position-relative text-center fade-in-element">
+        <div id="testimoniLink" class="testimoni-content position-relative text-center fade-in-element">
             <div class="d-flex d-lg-none flex-row align-items-center justify-content-between navigation-review">
                 <button type="button" class="left" onclick="swipeReview('left')">
                     <i class="bi bi-chevron-left"></i>
@@ -428,8 +429,7 @@
                 </div>
             </div>
         </div>
-
-        <div class="product-content text-left fade-in-element">
+        <div id="produkLink" class="product-content text-left fade-in-element">
             <div class="d-flex flex-lg-row flex-column align-items-lg-start justify-content-lg-between align-items-center justify-content-center z-0 text-lg-start text-center">
                 <div>
                 <h2 class="ms-lg-3">Produk Kami</h2>
@@ -533,11 +533,370 @@
                 </div>
             </div>
         </div>
-    </div>
+        <div id="newsLink" class="news-content d-flex flex-column align-items-center">
+            <div class="d-flex flex-lg-row flex-column align-items-center justify-content-center z-0 text-center">
+                <div>
+                <h2 class="">Update Berita Kami !</h2>
+                    <svg class="news-line mt-2 mb-lg-4 mb-3 ms-lg-3" height="6" xmlns="http://www.w3.org/2000/svg" style="overflow: visible;">
+                        <line x1="0" y1="0" x2="100%" y2="0" stroke="var(--white-2)" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </div>
+            </div>
+            <div class="d-flex flex-row align-items-center justify-content-between news-button">
+                <a class="carousel-control-prev news-left" href="#grabAndPullCarousel" role="button" data-slide="prev">
+                    <i class="bi bi-chevron-left"></i>
+                </a>
+                <a class="carousel-control-next news-right" href="#grabAndPullCarousel" role="button" data-slide="next">
+                    <i class="bi bi-chevron-right"></i>
+                </a>
+            </div>
+            <div id="grabAndPullCarousel" class="carousel slide news-carousel-wrapper" data-touch="false" data-interval="999999">
+                <div class="carousel-inner h-100 news-carousel">
+                    <div class="carousel-item active news-card position-absolute" style="left: 2vw;">
+                        <img src="./assets/news-photos/2.jpg" class="news-image">
+                        <div class="news-text">
+                            
+                            <a href="https://www.netralnews.com/kreativitas-mahasiswa-um-lahirkan-fruitguard-inovasi-pembungkus-buah-ramah-lingkungan/YVQ1YXRSU213Rnk5anRlRExndHExZz09">
+                                <h4>Netral News</h4>
+                                <span>Kreativitas Mahasiswa UM Lahirkan FruitGuard+ Inovasi Pembungkus Buah Ramah Lingkungan</span>
+                                <p>Dalam upaya mendukung pertanian berkelanjutan, tim mahasiswa dari Universitas Negeri Malang menghadirkan inovasi menarik melalui Program Kreativitas Mahasiswa bidang Kewirausahaan (PKM-K) 2025. Melalui program ini, mahasiswa Universitas Negeri Malang (UM) &hellip;</p>
+                            </a>
+                            
+                        </div>
+                    </div>
+                    <div class="carousel-item news-card position-absolute" style="left: 64vw;">
+                        <img src="./assets/news-photos/3.jpg" class="news-image">
+                        <div class="news-text">
+                            
+                            <a href="https://www.indonesiana.id/read/186241/mahasiswa-um-hadirkan-fruitguard-untuk-pembungkus-buah-bisnis-berkelanjutan">
+                                <h4>Indonesiana</h4>
+                                <span>Mahasiswa UM Hadirkan FruitGuard+ Untuk Pembungkus Buah & Bisnis Berkelanjutan</span>
+                                <p>Dalam rangka mendorong praktik pertanian yang berkelanjutan, mahasiswa Universitas Negeri Malang (UM) menghadirkan inovasi menarik melalui Program Kreativitas Mahasiswa bidang Kewirausahaan (PKM-K) tahun 2025. Lewat program ini &hellip;</p>
+                            </a>
 
+                        </div>
+                    </div>
+                    <div class="carousel-item news-card position-absolute" style="left: 126vw;">
+                        <img src="./assets/news-photos/1.jpg" class="news-image">
+                        <div class="news-text">
+                            <a href="https://ikoneksi.com/mahasiswa-um-ciptakan-brongsong-buah-ramah-lingkungan/">
+                                <h4>iKoneksi</h4>
+                                <span>Mahasiswa UM Ciptakan Brongsong Buah Ramah Lingkungan</span>
+                                <p class="d-lg-block d-none">Ancaman pencemaran plastik di sektor pertanian mendapat jawaban segar dari mahasiswa Universitas Negeri Malang (UM). Melalui Program Kreativitas Mahasiswa bidang Kewirausahaan (PKM-K), mereka berhasil melahirkan inovasi FruitGuard+, brongsong buah ramah lingkungan yang digadang mampu menjaga kualitas panen sekaligus mengurangi ketergantungan petani pada plastik sekali pakai &hellip;</p>
+                                <p class="d-lg-none d-block">Ancaman pencemaran plastik di sektor pertanian mendapat jawaban segar dari mahasiswa Universitas Negeri Malang (UM). Melalui Program Kreativitas Mahasiswa bidang Kewirausahaan (PKM-K), mereka berhasil melahirkan inovasi FruitGuard+, brongsong buah &hellip;</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="carousel-item news-card position-absolute" style="left: 188vw;">
+                        <img src="./assets/news-photos/4_11zon.jpg" class="news-image d-lg-block d-none" style="object-position: 0 -55vh;">
+                        <img src="./assets/news-photos/4_11zon.jpg" class="news-image d-lg-none d-block">
+                        <div class="news-text">
+                            <a href="https://sustainability.um.ac.id/index.php/2025/09/02/inovasi-heigrow-fruit-cover-berbahan-dasar-polypropylene-dan-chitosan-untuk-pembungkus-buah-optimal-serta-bisnis-berkelanjutan/">
+                                <h4>Sustainability</h4>
+                                <span>Inovasi Heigrow Fruit Cover Berbahan Dasar Polypropylene dan Chitosan untuk Pembungkus Buah Optimal serta Bisnis Berkelanjutan</span>
+                                <p>Dalam upaya mendukung pertanian berkelanjutan, tim mahasiswa dari Universitas Negeri Malang menghadirkan inovasi menarik melalui Program Kreativitas Mahasiswa bidang Kewirausahaan (PKM-K) 2025. Melalui program ini, mahasiswa Universitas Negeri Malang (UM) menunjukkan kreativitasnya &hellip;</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="carousel-item news-card position-absolute" style="left: 250vw;">
+                        <img src="./assets/news-photos/5.jpg" class="news-image d-lg-block d-none" style="object-position: 0 -78vh;">
+                        <img src="./assets/news-photos/5.jpg" class="news-image d-lg-none d-block">
+                        <div class="news-text">
+                            <a href="https://www.kompasiana.com/dyahrizkyarumwulandary3761/688ee73734777c26f86beec2/mahasiswa-universitas-negeri-malang-ciptakan-pembungkus-buah-antimikroba-realisasi-sdgs-no-2?page=1">
+                                <h4>Kompasiana</h4>
+                                <span>Mahasiswa Universitas Negeri Malang Ciptakan Pembungkus Buah Antimikroba Realisasi SDGS No 2</span>
+                                <p>Brongsong buah merupakan pelindung buah yang biasa digunakan petani untuk mencegah serangan hama. Namun, sebagian besar brongsong yang beredar saat ini berbahan plastik sekali pakai yang sulit terurai dan berpotensi mencemari lingkungan. Selain itu, kami juga berangkat &hellip;</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#grabAndPullCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#grabAndPullCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#grabAndPullCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#grabAndPullCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#grabAndPullCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                    <button type="button" data-bs-target="#grabAndPullCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                    <button type="button" data-bs-target="#grabAndPullCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                    <button type="button" data-bs-target="#grabAndPullCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                    <button type="button" data-bs-target="#grabAndPullCarousel" data-bs-slide-to="8" aria-label="Slide 9"></button>
+                  </div>                  
+            </div>
+        </div>          
+    </div>
+    <footer class="position-relative footer-container">
+        <div class="footer-bg"></div>
+        <div class="footer-leaf-mask"></div>
+        <div class="footer-content">
+            <div class="footer-left">
+                <a href="#homeLink">
+                    <img class="main-logo" src="assets/logo-no-shadow.png" alt="">
+                </a>
+                <p class="d-lg-block d-none">Inovasi Heigrow Fruit Cover Berbahan Dasar Polypropylene dan Chitosan untuk Pembungkus Buah Optimal serta Bisnis Berkelanjutan</p>
+                <div class="d-lg-none d-flex flex-row w-100">
+                    <div class="d-flex flex-column footer-left-child">
+                        <p class="">Inovasi Heigrow Fruit Cover Berbahan Dasar Polypropylene dan Chitosan untuk Pembungkus Buah Optimal serta Bisnis Berkelanjutan</p>
+                        <div class="d-lg-none d-flex flex-row gap-2 logo">
+                            <a href="https://www.instagram.com/fruitguard.pkmk/">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="https://www.youtube.com/@fruitguardplus">
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
+                            <a href="https://www.facebook.com/people/FruitGuard/61578439043507/">
+                                <i class="fa-brands fa-facebook"></i>
+                            </a>
+                            <a href="https://www.tiktok.com/@fruitguard.pkmk">
+                                <i class="fa-brands fa-tiktok"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer-first">
+                        <h6>Contact Us :</h6>
+                        <a href="https://share.google/4xHtdUCG8uKyySIE2" class="d-flex flex-row align-items-center gap-2">
+                            <i class="bi bi-geo-alt"></i>
+                            <p>Jl. Semarang No. 5 Malang 65145 Jawa Timur Indonesia</p>
+                        </a>
+                        <a href="https://api.whatsapp.com/send/?phone=6287776570732&text&type=phone_number&app_absent=0" class="d-flex flex-row align-items-center gap-2">
+                            <i class="fa-brands fa-whatsapp" style="margin-top: 0.4vh;"></i> 
+                            <p>087776570732</p>
+                        </a>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=fruitguard.pkmk@gmail.com&su=Info%20FruitGuard&body=Halo%20tim%20FruitGuard%2C%0A%0ASaya%20ingin%20mengetahui%20lebih%20lanjut%20tentang%20produk%20Anda."
+                        target="_blank" 
+                        rel="noopener noreferrer" class="d-flex flex-row align-items-center gap-2">
+                            <i class="bi bi-envelope"></i>
+                            <p>fruitguard.pkmk@gmail.com</p>
+                        </a>
+                    </div>
+                </div>
+                <span>&copy; FruitGuard+ 2025. Hak Cipta Dilindungi. <br> <i>Developed by : Budaksapir</i></span>
+            </div>
+            <div class="d-lg-flex d-none footer-first">
+                <h6>Contact Us :</h6>
+                <a href="https://share.google/4xHtdUCG8uKyySIE2" class="d-flex flex-row align-items-start gap-2">
+                    <i class="bi bi-geo-alt"></i>
+                    <p>Jl. Semarang No. 5 Malang 65145 Jawa Timur Indonesia</p>
+                </a>
+                <a href="https://api.whatsapp.com/send/?phone=6287776570732&text&type=phone_number&app_absent=0" class="d-flex flex-row align-items-start gap-2">
+                    <i class="fa-brands fa-whatsapp" style="margin-top: 0.4vh;"></i> 
+                    <p>087776570732</p>
+                </a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=fruitguard.pkmk@gmail.com&su=Info%20FruitGuard&body=Halo%20tim%20FruitGuard%2C%0A%0ASaya%20ingin%20mengetahui%20lebih%20lanjut%20tentang%20produk%20Anda."
+                target="_blank" 
+                rel="noopener noreferrer" class="d-flex flex-row align-items-start gap-2">
+                    <i class="bi bi-envelope"></i>
+                    <p>fruitguard.pkmk@gmail.com</p>
+                </a>
+            </div>
+            <div class="d-lg-flex d-none footer-second">
+                <h6>Our Sosial Media :</h6>
+                <a href="https://www.instagram.com/fruitguard.pkmk/" class="d-flex flex-row align-items-start gap-2">
+                    <i class="fa-brands fa-instagram" style="margin-top: 0.6vh;"></i>
+                    <p>@fruitguard.pkmk</p>
+                </a>
+                <a href="https://www.youtube.com/@fruitguardplus" class="d-flex flex-row align-items-start gap-2">
+                    <i class="fa-brands fa-youtube" style="margin-top: 0.6vh;"></i> 
+                    <p>FruitGuard+</p>
+                </a>
+                <a href="https://www.facebook.com/people/FruitGuard/61578439043507/" class="d-flex flex-row align-items-start gap-2">
+                    <i class="fa-brands fa-facebook" style="margin-top: 0.6vh;"></i>
+                    <p>FruitGuard</p>
+                </a>
+                <a href="https://www.tiktok.com/@fruitguard.pkmk" class="d-flex flex-row align-items-start gap-2">
+                    <i class="fa-brands fa-tiktok" style="margin-top: 0.6vh;"></i>
+                    <p>@fruitguard.pkmk</p>
+                </a>
+            </div>
+            <div class="d-lg-flex d-none footer-third">
+                <h6>Page :</h6>
+                <a href="#" class="d-flex flex-row align-items-start gap-2">
+                <i class="fa-solid fa-house" style="margin-top: 0.6vh;"></i>
+                <p>Home</p>
+                </a>
+                
+                <a href="#aboutLink" class="d-flex flex-row align-items-start gap-2">
+                <i class="fa-solid fa-circle-info" style="margin-top: 0.6vh;"></i>
+                <p>About</p>
+                </a>
+                
+                <a href="#testimoniLink" class="d-flex flex-row align-items-start gap-2">
+                <i class="fa-solid fa-comments" style="margin-top: 0.6vh;"></i>
+                <p>Testimoni</p>
+                </a>
+                
+                <a href="#produkLink" class="d-flex flex-row align-items-start gap-2">
+                <i class="fa-solid fa-box-open" style="margin-top: 0.6vh;"></i>
+                <p>Produk</p>
+                </a>
+                
+                <a href="#newsLink" class="d-flex flex-row align-items-start gap-2">
+                <i class="fa-solid fa-graduation-cap" style="margin-top: 0.6vh;"></i>
+                <p>Edukasi</p>
+                </a>                  
+            </div>
+        </div>
+    </footer>
+    <button class="btn btn-outline-light scroll-top-btn" id="scrollTopBtn" title="Kembali ke atas">
+        <i class="bi bi-chevron-up"></i>
+    </button>
 </main>
 
+<script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="js/hammer.min.js"></script>
 <script src="js/main.js"></script>
+<script>
+    (() => {
+      const root = document.getElementById('grabAndPullCarousel');
+      if (!root) return;
+    
+      const track = root.querySelector('.news-carousel');
+      const slides = Array.from(track.querySelectorAll('.carousel-item'));
+      const prevBtn = document.querySelector('.news-left');
+      const nextBtn = document.querySelector('.news-right');
+      const indicators = Array.from(root.querySelectorAll('.carousel-indicators [data-bs-slide-to]'));
+    
+      const slideCount = slides.length;
+      if (!slideCount) return;
+
+      const setTrackWidth = () => {
+        track.style.width = (slideCount * width) + 'px';
+    };
+    
+      // Sembunyikan indikator ekstra (HTML kamu ada 9 indikator, slide 3)
+      indicators.forEach((btn, i) => btn.style.display = i < slideCount ? '' : 'none');
+    
+      let currentIndex = slides.findIndex(s => s.classList.contains('active'));
+      if (currentIndex < 0) currentIndex = 0;
+    
+      // Lebar pakai bounding biar akurat (termasuk padding/border)
+      let width = root.getBoundingClientRect().width;
+      // Pastikan setiap slide fix sebesar lebar kontainer
+      const setSlideWidths = () => slides.forEach(s => s.style.flex = `0 0 ${width}px`);
+      setSlideWidths();
+      setTrackWidth();
+    
+      let currentOffset = -currentIndex * width;
+      let startOffset = currentOffset;
+      let isDragging = false;
+    
+      const bezier = 'cubic-bezier(.22,.61,.36,1)';
+    
+      const setTransform = (x, animate = true) => {
+        track.style.transition = animate ? `transform 380ms ${bezier}` : 'none';
+        track.style.transform = `translate3d(${x}px,0,0)`;
+      };
+    
+      const updateActive = () => {
+        slides.forEach((s, i) => s.classList.toggle('active', i === currentIndex));
+        indicators.forEach((btn, i) => btn.classList.toggle('active', i === currentIndex));
+      };
+    
+      const clamp = (n, min, max) => Math.max(min, Math.min(n, max));
+    
+      const goTo = (index, { animate = true } = {}) => {
+        currentIndex = clamp(index, 0, slideCount - 1);
+        currentOffset = -currentIndex * width;
+        setTransform(currentOffset, animate);
+        updateActive();
+      };
+    
+      const next = () => goTo(currentIndex + 1);
+      const prev = () => goTo(currentIndex - 1);
+    
+      // Inisialisasi posisi
+      setTransform(currentOffset, false);
+      updateActive();
+    
+      // Tombol panah
+      if (prevBtn) prevBtn.addEventListener('click', e => { e.preventDefault(); prev(); });
+      if (nextBtn) nextBtn.addEventListener('click', e => { e.preventDefault(); next(); });
+    
+      // Indikator
+      indicators.forEach((btn, i) => {
+        if (i >= slideCount) return;
+        btn.addEventListener('click', e => { e.preventDefault(); goTo(i); });
+      });
+    
+      // Util ambil tx dari matrix/matrix3d
+      const getTx = () => {
+        const tr = getComputedStyle(track).transform;
+        if (!tr || tr === 'none') return 0;
+        const vals = tr.startsWith('matrix3d') ? tr.slice(9, -1).split(',') : tr.slice(7, -1).split(',');
+        return parseFloat(vals[12] || vals[4] || 0);
+      };
+    
+      // Hammer
+      if (typeof Hammer !== 'undefined') {
+        const manager = new Hammer.Manager(root);
+        const pan = new Hammer.Pan({ direction: Hammer.DIRECTION_HORIZONTAL, threshold: 2 });
+        const swipe = new Hammer.Swipe({ direction: Hammer.DIRECTION_HORIZONTAL, velocity: 0.2 });
+        manager.add([pan, swipe]);
+    
+        manager.on('panstart', () => {
+          isDragging = true;
+          root.classList.add('is-grabbing');
+          startOffset = currentOffset = getTx();
+          setTransform(currentOffset, false);
+        });
+    
+        manager.on('panmove', ev => {
+          if (!isDragging) return;
+          let offset = startOffset + ev.deltaX;
+    
+          // Rubber-band di tepi
+          const atFirst = currentIndex === 0 && ev.deltaX > 0;
+          const atLast  = currentIndex === slideCount - 1 && ev.deltaX < 0;
+          if (atFirst || atLast) offset = startOffset + ev.deltaX * 0.33;
+    
+          setTransform(offset, false);
+        });
+    
+        const endGesture = (deltaX, velocityX) => {
+          isDragging = false;
+          root.classList.remove('is-grabbing');
+    
+          const passed    = Math.abs(deltaX);
+          const fast      = Math.abs(velocityX) > 0.35;
+          const threshold = width * 0.15;
+    
+          if (deltaX < 0 && (passed > threshold || fast)) {
+            next();
+          } else if (deltaX > 0 && (passed > threshold || fast)) {
+            prev();
+          } else {
+            goTo(currentIndex); // snap back
+          }
+        };
+    
+        manager.on('panend pancancel', ev => {
+          currentOffset = getTx(); // sinkronkan posisi terakhir
+          endGesture(ev.deltaX, ev.velocityX);
+        });
+    
+        manager.on('swipeleft',  () => next());
+        manager.on('swiperight', () => prev());
+      } else {
+        console.warn('Hammer.js not loaded – swipe disabled.');
+      }
+    
+      // Responsif: update lebar & posisi saat resize / gambar load
+      const ro = new ResizeObserver(() => {
+        width = root.getBoundingClientRect().width;
+        setSlideWidths();
+        setTrackWidth(); 
+        currentOffset = -currentIndex * width;
+        setTransform(currentOffset, false);
+      });
+      ro.observe(root);
+    
+      // Aksesibilitas keyboard
+      root.setAttribute('tabindex', '0');
+      root.addEventListener('keydown', e => {
+        if (e.key === 'ArrowLeft')  { e.preventDefault(); prev(); }
+        if (e.key === 'ArrowRight') { e.preventDefault(); next(); }
+      });
+    })();
+    </script>
 </body>
 </html>
