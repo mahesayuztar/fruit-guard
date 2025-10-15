@@ -157,13 +157,13 @@ h1 {
   position: relative;
   font-weight: 900;
   font-size: 230%;
-  background-image: linear-gradient(to right, var(--green-3), var(--green-2), var(--green-3));
+  background-image: linear-gradient(to right, var(--green-3));
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
   line-height: 1;
-  filter: drop-shadow(3px 4px 2.5px rgba(0,0,0,25%));
+  filter: drop-shadow(2px 2px 5px rgba(0,0,0,25%));
   text-align: center;
 }
 
@@ -186,7 +186,7 @@ h1 {
   -webkit-text-fill-color: transparent;
 
   /* border putih */
-  -webkit-text-stroke: 0.9px white;
+  -webkit-text-stroke: 0.2px white;
 
   /* efek bayangan supaya "angkat" */
   filter: drop-shadow(3px 4px 2.5px rgba(0, 0, 0, 0.25));
@@ -204,12 +204,14 @@ h1 {
 }
 
 .hero-description p {
-  font-weight: medium;
+  font-weight: bold;
   font-size: 3vw;
-  filter: drop-shadow(3px 4px 4px rgba(0, 0, 0, 1));
+  filter: drop-shadow(3px 4px 10px rgba(0, 0, 0, 1));
+  padding: 0 3vw;
 }
 
 .btn-hero, .btn-hero:active, .btn-hero:focus, .btn-hero:focus:active {
+  z-index: 100;
   background-color: var(--yellow-1);
   color: var(--green-1);
   border-radius: 5px;
@@ -307,6 +309,7 @@ h1 {
   }
 
   .hero-description p {
+    padding: 0;
     width: 52%;
     font-weight: bold;
     font-size: 1.9vw;
@@ -2017,7 +2020,7 @@ h3 {
 
   .footer-container {
     color: var(--bg-color);
-    margin-top: -30vh;
+    margin-top: -28vh;
     width: 100%;
     background-color: var(--green-dark);
     box-shadow: -1px -1px 15px rgba(0, 0, 0, 0.4);
@@ -2097,7 +2100,7 @@ h3 {
   }
 
   .footer-left span {
-    margin-top: 6vh;
+    margin-top: 7vh;
     font-size: 1.5vw;
   }
   
