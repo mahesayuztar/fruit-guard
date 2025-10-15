@@ -186,10 +186,10 @@ h1 {
   -webkit-text-fill-color: transparent;
 
   /* border putih */
-  -webkit-text-stroke: 0.2px white;
+  -webkit-text-stroke: 0.5px white;
 
   /* efek bayangan supaya "angkat" */
-  filter: drop-shadow(3px 4px 2.5px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.25));
   animation: shine 3s linear infinite;
   text-align: center;
 }
@@ -378,7 +378,6 @@ h2 {
   margin: 7vw 0 0 0;
   width: 80vw;
 }
-
 .logo-part-of {
   margin: 3.5vw 0 0 0;
   width: 75vw;
@@ -386,23 +385,30 @@ h2 {
   position: relative;
 }
 
+/* tetap pakai kelas yang sama */
 .logo-row-part-of {
   display: flex;
-  animation: scroll-logos 15s linear infinite;
   width: max-content;
+  /* biar licin */
+  will-change: transform;
+  /* boleh atur spasi antar logo (opsional) */
+  gap: 32px;
+
+  /* animasi pakai variabel (durasi dihitung via JS) */
+  animation-name: scroll-logos-px;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: var(--scroll-duration, 10s);
 }
 
 .logo-row-part-of img {
   height: 42px;
+  flex: 0 0 auto; /* hindari shrink aneh di iOS */
 }
 
-@keyframes scroll-logos {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-51%);
-  }
+@keyframes scroll-logos-px {
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(-1 * var(--scroll-distance, 1000px))); }
 }
 
 h3 {

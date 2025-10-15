@@ -84,11 +84,13 @@
                 Inovasi Heigrow Fruit Cover Berbahan Dasar Polypropylene dan Chitosan 
                 untuk Pembungkus Buah Optimal serta Bisnis Berkelanjutan
                 </p>
-                <button type="button" class="d-flex btn btn-hero align-items-center justify-content-between px-2 py-1 gap-3 mt-3">
-                    <i class="bi bi-cart-plus"></i>
-                    <span class="fw-semibold">Lihat Produk</span>
-                    <i class="bi bi-arrow-right"></i>
-                </button>
+                <a href="#produkLink" style="display: inline-block; text-decoration: none;"></a>
+                    <button type="button" class="d-flex btn btn-hero align-items-center justify-content-between px-2 py-1 gap-3 mt-3">
+                        <i class="bi bi-cart-plus"></i>
+                        <span class="fw-semibold">Lihat Produk</span>
+                        <i class="bi bi-arrow-right"></i>
+                    </button>
+                </a>
             </div>
         </div>
     </div>  
@@ -748,6 +750,60 @@
 <script type="text/javascript" src="js/hammer.min.js"></script>
 <script src="js/main.js"></script>
 <script>
+
+(function () {
+  // Kecepatan konstan (px per detik). Atur sesuka kamu.
+  const PX_PER_SECOND = 100;
+
+  function waitImagesLoaded(container) {
+    const imgs = container.querySelectorAll('img');
+    const tasks = Array.from(imgs).map(img => {
+      if (img.complete) return Promise.resolve();
+      return new Promise(res => img.addEventListener('load', res, { once: true }));
+    });
+    return Promise.all(tasks);
+  }
+
+  function computeHalfWidth(track) {
+    const children = Array.from(track.children);
+    const half = Math.floor(children.length / 2); // karena konten didobel untuk seamless
+    const style = getComputedStyle(track);
+    const gap = parseFloat(style.gap || '0');
+
+    let width = 0;
+    for (let i = 0; i < half; i++) {
+      width += children[i].getBoundingClientRect().width;
+      if (i < half - 1) width += gap;
+    }
+    return width;
+  }
+
+  async function setupTrack(track) {
+    await waitImagesLoaded(track);
+
+    // hitung lebar separuh konten
+    const halfWidth = computeHalfWidth(track);
+
+    // set jarak geser & durasi animasi
+    track.style.setProperty('--scroll-distance', `${halfWidth}px`);
+    const durationSec = halfWidth / PX_PER_SECOND;
+    track.style.setProperty('--scroll-duration', `${durationSec}s`);
+  }
+
+  // Seleksi elemen sesuai HTML yang kamu kirim
+  const wrapper = document.querySelector('.logo-part-of');
+  const track   = wrapper && wrapper.querySelector('.logo-row-part-of');
+  if (!track) return;
+
+  let resizeTimer;
+  function onResize() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => setupTrack(track), 150);
+  }
+
+  setupTrack(track);
+  window.addEventListener('resize', onResize);
+})();
     (() => {
       const root = document.getElementById('grabAndPullCarousel');
       if (!root) return;
